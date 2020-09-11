@@ -1,20 +1,35 @@
-# _Application Name_
+# _jsExchange_
 
-#### _Brief description of application, Date of current version_
+#### _Week 6 Solo Project for Epicodus, September 11th, 2020_
 
 #### By _**Mike Manchee**_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+A currency exchange project. The program asks the user to specify a currency from, currency to, and an amount. The program then converts the currency as requested. 
 
 <!-- Brainstorming
+API call to ExchangeRate-API
+Build one exchange from US Dollars to SK Won
+build in error handling
+Build for there to other currencies, A to B (where A is the Dollar and B is all other currencies)
+Then A (as any currency) to B (as any currency)
+ideas:
+exchange ticker (might take too many calls)
+investigate function call delay
+graphics changing one coin into another
 
  -->
 ### Specs
 | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
-|  1. ... | ... | ... |
+|  1. Get API Key and hide in evn | API | env |
+|  2. Receive correct information from API | input | verified |
+|  3. Parse Function, correctly separate collected information | ... | ... |
+|  4. Exchange Function, use API data and convert | Dollar | Franc |
+|  5. Expand API call to except any currency | request | requested currency |
+|  6. Expand Exchange to allow for any conversion | any currency | any currency |
+|  7. ... | ... | ... |
 
 ## Setup/Installation Requirements
 
@@ -24,7 +39,7 @@ _{This is a detailed description of your application. Its purpose and usage.  Gi
   * Run GitBASH in directory
     * Type "npm install" - to install Node Package Manager and additional files
     * Type "npm run start" - to open compiled browser and view project
-  * Have fun with ............! <!-- TITLE HERE -->
+  * Have fun with The Exchange!
 
 * Cloning options
   * For cloning please use the following GitHub [tutorial](https://docs.github.com/en/enterprise/2.16/user/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
@@ -32,20 +47,16 @@ _{This is a detailed description of your application. Its purpose and usage.  Gi
   * Run GitBASH in directory
     * Type "npm install" - to install Node Package Manager and additional files
     * Type "npm run start" - to open compiled browser and view project
-  * Have fun with ................! <!-- TITLE HERE -->
+  * Have fun with The Exchange!
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
-
-## Support and contact details
-
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+no known bugs
 
 ## Technologies Used
 
 Project Specific
-<!-- FILL OUT HERE -->
+* API call with error handling
 
 Main Programs
 * HTML

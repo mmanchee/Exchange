@@ -16,7 +16,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: '',               // <== Title
+      title: 'exchange',
       template: './src/index.html',
       inject: 'body'
     }),
