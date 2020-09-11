@@ -9,8 +9,9 @@ function clearForm() {
   $("input#input-from2").val("");
   $("input#input-to2").val("");
   $("input#input-curr").val("");
-  $("#result").val("");
-  $("#error").val("");
+  $("#results").val("");
+  $("#error").text("");
+  $("#result-card").hide();
 }
 
 $(document).ready(function() {
@@ -36,6 +37,7 @@ $(document).ready(function() {
         const data = JSON.parse(response);
         let textToHTML = convert.convertCurrency(data, infoArray);
         $("#results").html(textToHTML);
+        $("#result-card").toggle();
       }, function(err) {
         console.log(err);       // error for console
         $("#error").text(err);  // error for user
