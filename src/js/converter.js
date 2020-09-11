@@ -20,7 +20,7 @@ export class Converter {
   }
 
   exchanger(parsedArray) {
-    parsedArray.push((parsedArray[3] / parsedArray[4]));
+    parsedArray.push((parsedArray[4] / parsedArray[3]));
     parsedArray.push(parsedArray[5] * parsedArray[2]);
     return parsedArray;
   }
