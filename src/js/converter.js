@@ -1,5 +1,8 @@
 export class Converter {
 
+  check(input) {
+    for (let i = )
+  }
   convertCurrency(data, infoArray) {                        // infoArray = ["USD", "EUR", 500.24]
     let parsedArray = this.parseData(data, infoArray);
     let finalArray = this.exchanger(parsedArray);           // parsedArray = ["USD", "EUR", 500.24, 1, .8449]
