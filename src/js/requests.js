@@ -1,3 +1,5 @@
+import { convertCurrency } from './exchange.js';
+
 export function currencyCall(infoArray) {
   let promise = new Promise(function(resolve, reject) {
     let request = new XMLHttpRequest();
@@ -14,9 +16,7 @@ export function currencyCall(infoArray) {
   });
   promise.then(function(response) {
     let exchangeData = JSON.parse(response);
-    console.log(exchangeData);
-    infoArray = false;
-    // let textToHTML = convertCurrency(exchangeData, infoArray);
-    // return textToHTML;
+    let textToHTML = convertCurrency(exchangeData, infoArray);
+    return textToHTML;
   });
 }
