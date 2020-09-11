@@ -1,8 +1,16 @@
 export class Converter {
 
   check(input) {
-    for (let i = )
+    let checkArray = ["AED", "ARS", "AUD", "BGN", "BRL", "BSD", "CAD", "CHF", "CLP", "CNY", "COP", "CZK", "DKK", "DOP", "EGP", "EUR", "FJD", "GBP", "GTQ", "HKD", "HRK", "HUF", "IDR", "ILS", "INR", "ISK", "JPY", "KRW", "KZT", "MVR", "MXN", "MYR", "NOK", "NZD", "PAB", "PEN", "PHP", "PKR", "PLN", "PYG", "RON", "RUB", "SAR", "SEK", "SGD", "THB", "TRY", "TWD", "UAH", "USD", "UYU", "ZAR"];
+    let message = false;
+    for (let i = 0; i < checkArray.length; i++) {
+      if(input === checkArray[i]) {
+        message = true;
+      }
+    }
+    return message;
   }
+  
   convertCurrency(data, infoArray) {                        // infoArray = ["USD", "EUR", 500.24]
     let parsedArray = this.parseData(data, infoArray);
     let finalArray = this.exchanger(parsedArray);           // parsedArray = ["USD", "EUR", 500.24, 1, .8449]
