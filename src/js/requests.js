@@ -1,4 +1,4 @@
-function currencyCall(infoArray) {
+export function currencyCall(infoArray) {
   let promise = new Promise(function(resolve, reject) {
     let request = new XMLHttpRequest();
     let url = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`;
@@ -14,7 +14,9 @@ function currencyCall(infoArray) {
   });
   promise.then(function(response) {
     let exchangeData = JSON.parse(response);
-    let textToHTML = convertCurrency(exchangeData, infoArray);
-    return textToHTML;
+    console.log(exchangeData);
+    infoArray = false;
+    // let textToHTML = convertCurrency(exchangeData, infoArray);
+    // return textToHTML;
   });
 }
