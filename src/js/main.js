@@ -10,7 +10,9 @@ function clearForm() {
   $("input#input-to2").val("");
   $("input#input-curr").val("");
   $("#result").val("");
+  $("#error").val("");
 }
+
 $(document).ready(function() {
   $("#form-input").on("click", function(event) {
     event.preventDefault();
@@ -25,6 +27,7 @@ $(document).ready(function() {
     clearForm();
 
     let checkData = convert.errorCheck(inputFrom, inputFrom2, inputTo, inputTo2, inputCurr);
+    
     if (!checkData[0]) {
       const infoArray = [checkData[1], checkData[2], checkData[3]];
       let promise = exchange.currencyCall(infoArray);
@@ -33,11 +36,11 @@ $(document).ready(function() {
         let textToHTML = convert.convertCurrency(data, infoArray);
         $("#result").html(textToHTML);
       }, function(err) {
-        console.log(err);
-        $("#result").text(err);
+        console.log(err);       // error for console
+        $("#error").text(err);  // error for user
       });
     } else {
-      $("#result").text(checkData[0]);
+      $("#error").text(checkData[0]);
     }
   });
 });
