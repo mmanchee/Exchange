@@ -5,7 +5,12 @@ import './../css/styles.css';
 import { ExchangeRate } from './exchangerate.js';
 import { Converter } from './converter.js';
 
-
+function clearForm() {
+  $("input#input-from2").val("");
+  $("input#input-to2").val("");
+  $("input#input-curr").val("");
+  $("#result").val("");
+}
 $(document).ready(function() {
   $("#form-input").on("click", function(event) {
     event.preventDefault();
@@ -14,31 +19,31 @@ $(document).ready(function() {
     
     const inputFrom = $("#input-from").val();
     const inputFrom2 = $("input#input-from2").val();
-    const inputTo = $("#input-to").val();
+    let inputTo = $("#input-to").val();
     const inputTo2 = $("input#input-to2").val();
-    const inputCurr = $("input#input-curr").val();
+    let inputCurr = $("input#input-curr").val();
+    clearForm();
     let message = "";
 
+    //let checkedData = errorCheck(inputFrom, inputFrom2, inputTo, inputTo2, inputCurr)
     if (inputCurr > 0 && !isNaN(inputCurr)) {
-      parseFloat(inputCurr);
-
+      inputCurr = parseFloat(inputCurr);
       if (inputFrom2) {
         if (convert.check(inputFrom2)) {
-          inputFrom = inputForm2;
+          inputFrom = inputFrom2;
         } else {
-          message = "Alternate Currency Code is invalid,"
+          message = "Alternate Currency Code is invalid,";
         }
       }
       if (inputTo2) {
         if (convert.check(inputTo2)) {
           inputTo = inputTo2;
         } else {
-          message = "Alternate Currency Code is invalid,"
+          message = "Alternate Currency Code is invalid,";
         }
       }
-      if (message !== "") {
+      if (!message) {
         const infoArray = [inputFrom, inputTo, inputCurr];
-        
         let promise = exchange.currencyCall(infoArray);
         promise.then(function(response) {
           const data = JSON.parse(response);
@@ -50,9 +55,11 @@ $(document).ready(function() {
         });
       } 
     } else {
-      message = "Currency is not a valid entry, Please try again."
+      message = "Currency is not a valid entry, Please try again.";
     }
-      
+    if (message !== "") {
+      $("#result").text(message);
+    }
     
   });
 });
