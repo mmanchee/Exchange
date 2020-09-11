@@ -7,6 +7,14 @@ import './../css/styles.css';
 $(document).ready(function() {
   $("#").on("click", function(event) {
     event.preventDefault();
-    
+    const inputFrom = $("input#input-from").val();
+    const inputTo = $("input#input-to").val();
+    const inputCurr = parseInt($("input#input-curr").val());
+
+    const infoArray = [inputFrom, inputTo, inputCurr]
+
+    let textToHTML = currentCall(infoArray);
+
+    $("#result").html(textToHTML);
   })
 })
