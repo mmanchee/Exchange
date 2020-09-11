@@ -57,6 +57,7 @@ no known bugs
 
 Project Specific
 * API call with error handling
+  * API documentation located [Here](https://www.exchangerate-api.com/docs/overview)
 
 Main Programs
 * HTML

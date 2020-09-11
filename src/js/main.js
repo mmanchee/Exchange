@@ -29,12 +29,13 @@ $(document).ready(function() {
     let checkData = convert.errorCheck(inputFrom, inputFrom2, inputTo, inputTo2, inputCurr);
     
     if (!checkData[0]) {
+      console.log(checkData);
       const infoArray = [checkData[1], checkData[2], checkData[3]];
       let promise = exchange.currencyCall(infoArray);
       promise.then(function(response) {
         const data = JSON.parse(response);
         let textToHTML = convert.convertCurrency(data, infoArray);
-        $("#result").html(textToHTML);
+        $("#results").html(textToHTML);
       }, function(err) {
         console.log(err);       // error for console
         $("#error").text(err);  // error for user

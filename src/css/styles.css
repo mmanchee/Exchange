@@ -1,0 +1,72 @@
+#floating-img {
+  float: right;
+  margin: 10px;
+  width: 30%;
+  border-radius: 30px;
+}
+
+.exchange {
+  background-color: rgb(179, 247, 247, 0.9);
+}
+
+body {
+  background-image: url("https://responsive.fxempire.com/cover/1845x1230/webp-lossy-70.q50/_fxempire_/2019/10/currency-image3-5.jpg");
+  background-repeat: repeat;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#footer {
+  text-align: center;
+  margin-top: 100px;
+  font-style: italic;
+}
+
+.header2 {
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.header3 {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.add-info {
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serifa;
+}
+
+#header-img {
+  width: 100%;
+  border-radius: 0 0 20px 20px;
+  transform: translateY(-80px);
+}
+#title1 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 90px;
+  position: absolute;
+  top: 20px;
+  left: 20%;
+}
+#title2 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 60px;
+  position: absolute;
+  top: 150px;
+  left: 25%;
+}
+
+.title-text {
+  font-weight: 900;
+  font-size: 60px;
+  color: rgb(133, 125, 125);
+  font-style: italic;
+  border: black;
+  text-shadow: -1px 10px black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#results {
+  margin: 20px 0 30px 20px;
+  font-size: 20px;
+
+}

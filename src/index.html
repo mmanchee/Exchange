@@ -4,19 +4,21 @@
   <title>The Exchange</title>
 </head>
 <body>
-  <div class="container">
-    <div class="jumbotron">
-      <h1>The Exchange</h1>
-      <h2>What a Fancy Exchange!</h2>
+  <div class="container exchange">
+    <div class="">
+      <img src="https://www.york-pm.co.uk/wp-content/uploads/2017/01/Currency-Exchanges-in-York-1068x433.jpg" id="header-img">
+      <h1 id="title1" class="title-text">The Exchange</h1>
+      <h2 id="title2" class="title-text">What a Fancy Exchange!</h2>
     </div>
-    <form id="user-input">
+    <form id="user-input mt-4">
       <div class="form-inline">
-        <label for="input-curr" class="mr-4">Curreny:</label>
+        <label for="input-curr" class="header2 mr-4">Curreny:</label>
         <input type="text" class="form-control col-5" id="input-curr" placeholder="Currency Amount">
       </div>
+      <img src="https://www.open.edu/openlearn/ocw/pluginfile.php/1426209/mod_oucontent/oucontent/75333/a195456a/ea66c311/bltl_l2_s2_1_currencies.jpg" id="floating-img">
       <div class="row mt-3">
-        <div class="col-4">
-          <label for="input-from" class="">Current Currency</label>
+        <div class="col-5">
+          <label for="input-from" class="header3">Current Currency</label>
           <select class="form-control" id="input-from">
             <option value="USD">USD - US Dollar</option>
             <option value="AUD">AUD - Australian Dollar</option>
@@ -32,8 +34,8 @@
             <option value="TWD">TWD - Taiwan New Dollar</option>
           </select>
         </div>
-        <div class="col-4">
-          <label for="input-to" class="">Future Currency</label>
+        <div class="col-5">
+          <label for="input-to" class="header3">Future Currency</label>
           <select class="form-control" id="input-to">
             <option value="AUD">AUD - Australian Dollar</option>
             <option value="CAD">CAD - Canadian Dollar</option>
@@ -51,18 +53,27 @@
         </div>
       </div>
       <div class ="row mt-3">
-        <div class="col-4">
+        <div class="col-5">
           <input type="text" class="form-control" id="input-from2" placeholder="Alternate Currency Code">
         </div>
-        <div class="col-4">
+        <div class="col-5">
           <input type="text" class="form-control" id="input-to2" placeholder="Alternate Currency Code">
         </div>
       </div>
-      <button type="button" id="form-input" class="btn btn-info mt-3">Exchange</button>
+      <button type="button" id="form-input" class="btn btn-info mt-4">Exchange</button>
     </form>
     <div id="error"></div>
     <div id="results">
 
+    </div>
+    <div class="add-info mt-5">
+      <p>Linked below are website to check out if you would like to learn more about currency and exchanges</p>
+      <p>Click <a href="https://youtu.be/YCN2aTlocOw">Here</a> for a documentary on the history of currency.</p>
+      <p>Click <a href="https://www.xe.com/">Here</a> for XE.com a top exchange website.</p>
+      <p>Click <a href="https://www.exchangerate-api.com/">Here</a> for more information on the API used in this project.</p>
+    </div>
+    <div id="footer">
+      <p>This site is only an example project for <a href="https://www.epicodus.com/">Epicodus</a>.<br>No information is saved and no exchanges are made..</p>
     </div>
   </div>
 </body>
