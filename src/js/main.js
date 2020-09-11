@@ -19,47 +19,25 @@ $(document).ready(function() {
     
     const inputFrom = $("#input-from").val();
     const inputFrom2 = $("input#input-from2").val();
-    let inputTo = $("#input-to").val();
+    const inputTo = $("#input-to").val();
     const inputTo2 = $("input#input-to2").val();
-    let inputCurr = $("input#input-curr").val();
+    const inputCurr = $("input#input-curr").val();
     clearForm();
-    let message = "";
 
-    //let checkedData = errorCheck(inputFrom, inputFrom2, inputTo, inputTo2, inputCurr)
-    if (inputCurr > 0 && !isNaN(inputCurr)) {
-      inputCurr = parseFloat(inputCurr);
-      if (inputFrom2) {
-        if (convert.check(inputFrom2)) {
-          inputFrom = inputFrom2;
-        } else {
-          message = "Alternate Currency Code is invalid,";
-        }
-      }
-      if (inputTo2) {
-        if (convert.check(inputTo2)) {
-          inputTo = inputTo2;
-        } else {
-          message = "Alternate Currency Code is invalid,";
-        }
-      }
-      if (!message) {
-        const infoArray = [inputFrom, inputTo, inputCurr];
-        let promise = exchange.currencyCall(infoArray);
-        promise.then(function(response) {
-          const data = JSON.parse(response);
-          let textToHTML = convert.convertCurrency(data, infoArray);
-          $("#result").html(textToHTML);
-        }, function(err) {
-          console.log(err);
-          $("#result").text(err);
-        });
-      } 
+    let checkData = convert.errorCheck(inputFrom, inputFrom2, inputTo, inputTo2, inputCurr);
+    if (!checkData[0]) {
+      const infoArray = [checkData[1], checkData[2], checkData[3]];
+      let promise = exchange.currencyCall(infoArray);
+      promise.then(function(response) {
+        const data = JSON.parse(response);
+        let textToHTML = convert.convertCurrency(data, infoArray);
+        $("#result").html(textToHTML);
+      }, function(err) {
+        console.log(err);
+        $("#result").text(err);
+      });
     } else {
-      message = "Currency is not a valid entry, Please try again.";
+      $("#result").text(checkData[0]);
     }
-    if (message !== "") {
-      $("#result").text(message);
-    }
-    
   });
 });

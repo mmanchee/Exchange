@@ -10,7 +10,7 @@ export class Converter {
     }
     return message;
   }
-  
+
   convertCurrency(data, infoArray) {                        // infoArray = ["USD", "EUR", 500.24]
     let parsedArray = this.parseData(data, infoArray);
     let finalArray = this.exchanger(parsedArray);           // parsedArray = ["USD", "EUR", 500.24, 1, .8449]
@@ -40,5 +40,29 @@ export class Converter {
     let percent = finalArray[5] * 100;
     let message = `<p>You have exchanged ${finalArray[2]} ${finalArray[0]} into ${finalArray[6]} ${finalArray[1]} <br> at a rate of ${percent} %. <br> Thank you for using The Exchange.</p>`;
     return message;
+  }
+
+  errorCheck(inputFrom, inputFrom2, inputTo, inputTo2, inputCurr) {
+    let checkArray = [false, inputFrom, inputTo, inputCurr];
+    if (inputCurr > 0 && !isNaN(inputCurr)) {
+      checkArray[3] = parseFloat(inputCurr);
+      if (inputFrom2) {
+        if (this.check(inputFrom2)) {
+          checkArray[1] = inputFrom2;
+        } else {
+          checkArray[0] = "Alternate Currency Code is invalid, Please try again";
+        }
+      }
+      if (inputTo2) {
+        if (this.check(inputTo2)) {
+          checkArray[2] = inputTo2;
+        } else {
+          checkArray[0] = "Alternate Currency Code is invalid, Please try again";
+        }
+      }
+    } else {
+      checkArray[0] = "Currency is not a valid input, Please try again";
+    }
+    return checkArray;
   }
 }
