@@ -37,9 +37,18 @@ export class Converter {
   }
 
   messenger(finalArray) {
+    let moneyIn = this.fixNum(finalArray[2]);
+    let moneyOut = this.fixNum(finalArray[6]);
     let percent = finalArray[5] * 100;
-    let message = `<p>You have exchanged ${finalArray[2]} ${finalArray[0]} into ${finalArray[6]} ${finalArray[1]} <br> at a rate of ${percent} %. <br> Thank you for using The Exchange.</p>`;
+    percent = this.fixNum(percent);
+    let message = `<p>You have exchanged ${moneyIn} ${finalArray[0]} into ${moneyOut} ${finalArray[1]} <br> at a rate of ${percent} %. <br> Thank you for using The Exchange.</p>`;
     return message;
+  }
+  
+  fixNum(num) {
+    let num = num.toFixed(2);
+    num = num.toString();
+    return num;
   }
 
   errorCheck(inputFrom, inputFrom2, inputTo, inputTo2, inputCurr) {
