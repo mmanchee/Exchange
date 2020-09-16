@@ -46,7 +46,7 @@ export class Converter {
   }
   
   fixNum(num) {
-    let num = num.toFixed(2);
+    num = num.toFixed(2);
     num = num.toString();
     return num;
   }

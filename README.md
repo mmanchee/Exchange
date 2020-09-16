@@ -25,11 +25,11 @@ graphics changing one coin into another
 | :-------------     | :------------- | :------------- |
 |  1. Get API Key and hide in evn | API | env |
 |  2. Receive correct information from API | input | verified |
-|  3. Parse Function, correctly separate collected information | ... | ... |
+|  3. Parse Function, correctly separate collected information | EUR | .8449 |
 |  4. Exchange Function, use API data and convert | Dollar | Franc |
 |  5. Expand API call to except any currency | request | requested currency |
 |  6. Expand Exchange to allow for any conversion | any currency | any currency |
-|  7. ... | ... | ... |
+|  7. Add extra information for the user | extra | Videos and Links |
 
 ## Setup/Installation Requirements
 
