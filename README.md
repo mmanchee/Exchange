@@ -36,11 +36,11 @@ graphics changing one coin into another
 ## Setup/Installation Requirements
 
 * Download option
-  * Download files from GitHub repository by click Code and Download Zip
-  * Extract files into a single directory 
+  * Download files from GitHub repository by click Code and Download Zip.
+  * Extract files into a single directory.
   * Run GitBASH in directory
-    * Type "npm install" - to install Node Package Manager and additional files
-    * Type "npm run start" - to open compiled browser and view project
+    * Type "npm install" - to install Node Package Manager and additional files.
+    * Type "npm run start" - to open compiled browser and view project.
   * Have fun with The Exchange!
 
 * Cloning options
