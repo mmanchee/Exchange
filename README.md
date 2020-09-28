@@ -4,6 +4,8 @@
 
 #### By _**Mike Manchee**_
 
+#### Published at: [Exchange](https://mmanchee.github.io/Exchange/)
+
 ## Description
 
 A currency exchange project. The program asks the user to specify a currency from, currency to, and an amount. The program then converts the currency as requested. 
